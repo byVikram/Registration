@@ -1,3 +1,6 @@
 # Registration
 
-Login nad SignUp page with custom design/styles
+Login and SignUp page with custom design/styles
+
+with backend in xampp
+
