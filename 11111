@@ -1,0 +1,43 @@
+from flask import Flask, request, jsonify
+from flask_cors import CORS
+import mysql.connector
+import json
+
+db = mysql.connector.connect(
+    host='localhost',
+    user='vikram',  # Replace with your MySQL username
+    password='vikram',  # Replace with your MySQL password
+    database='myloginapp',  # Replace with the name of the MySQL database you created
+)
+
+app = Flask(__name__)
+CORS(app, resources={r"/api/*": {"origins": "*"}})
+
+file_path = "output.txt"
+# Sample user data (replace this with your database or storage)
+
+with open(file_path, "r") as file:
+    users = json.load(file)
+
+@app.route('/api/login', methods=['POST'])
+def login():
+    data = request.get_json()
+    email = data.get('email')
+    password = data.get('password')
+
+    if not email or not password:
+        return jsonify({'error': 'Invalid data'}), 400
+
+    cursor = db.cursor()
+
+    try:
+        cursor.execute('INSERT INTO users (email, password) VALUES (%s, %s)', (email, password))
+        db.commit()
+    except Exception as e:
+        db.rollback()
+        return jsonify({'error': 'Failed to register user'}), 500
+
+    return jsonify({'message': 'User registered successfully'}), 200
+
+if __name__ == '__main__':
+    app.run(debug=True)
