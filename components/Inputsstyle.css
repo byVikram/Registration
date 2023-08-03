@@ -1,0 +1,97 @@
+body{
+    color: white;
+}
+
+.main{
+    position: absolute;
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    
+}
+
+.main::before{
+    content: "";
+    background-color: rgb(149, 36, 36);
+    position: absolute;
+    width: 368px;
+    height: 39%;
+    padding: 1rem;
+    
+    opacity: 0.3;
+}
+
+form{
+    position: absolute;
+    display: flex;
+    padding: 2rem;
+    padding-bottom: 5rem;
+    flex-direction: column;
+    text-align: center;
+    border: 1px solid rgb(227, 228, 227);
+    border-radius: 3px;
+    box-shadow: 20px 20px 50px grey;
+}
+.name{
+    width: 300px;
+    font-size: 1.2rem;
+    padding: 10px;
+    border: 1px solid rgb(227, 228, 227);
+    border-radius: 20px;
+    box-shadow: 20px 20px 100px grey;
+
+}
+.name:hover{
+    padding: 12px;
+    transition: 0.5s;
+    width: 310px;
+
+    border: 1px solid rgb(227, 228, 227);
+    border-radius: 20px;
+    box-shadow: 20px 20px 100px grey;
+}
+.password{
+    width: 300px;
+    font-size: 1.2rem;
+    padding: 10px;
+
+    border: 1px solid rgb(227, 228, 227);
+    border-radius: 20px;
+    box-shadow: 20px 20px 100px grey;
+}
+.password:hover{
+    width: 310px;
+    transition: 0.5s;
+    padding: 12px;
+    border: 1px solid rgb(227, 228, 227);
+    border-radius: 20px;
+    box-shadow: 20px 20px 100px grey;
+}
+.t{
+    width: 100px;
+    padding: 10px;
+}
+.t:hover{
+    background-color: rgb(109, 202, 216);
+    padding: 13px;
+    transition: 0.3s;
+}
+
+.hello{
+    
+    position: absolute;
+    justify-content: center;
+    text-align: center;
+
+    transform: translate(-50%,-50%);
+
+    top: 67%;
+    left: 50%;
+
+    display: flex;
+    flex-direction: column;
+}
+
